@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:symmetryk/components/snackbar.dart';
 import 'package:symmetryk/statics.dart';
@@ -62,7 +63,109 @@ class _HomePageState extends State<HomePage> {
               ],
           toolbarHeight: 70,
         ),
-        
+        drawer: Drawer(
+          child: CustomScrollView(
+            shrinkWrap: true,
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverList(delegate: SliverChildListDelegate([
+                Container(color: Palette.primaryColor,height: 21),
+                Image.asset("assets/logo.PNG")
+              ])),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    ListTile(
+                      title: Text(
+                        "home",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                      ),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20.0),
+                      leading: Icon(
+                        Icons.home_rounded,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      selected: true,
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  
+                  
+                    ListTile(
+                      title: Text("downs"),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20.0),
+                      leading: Icon(
+                        Icons.download_done_rounded,
+                        color: Theme.of(context).iconTheme.color,
+                      ),
+                      onTap: () {
+                      },
+                    ),
+                    ListTile(
+                      title: Text("playlists"),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20.0),
+                      leading: Icon(
+                        Icons.playlist_play_rounded,
+                        color: Theme.of(context).iconTheme.color,
+                      ),
+                      onTap: () {
+                      },
+                    ),
+                    ListTile(
+                      title: Text("settings"),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20.0),
+                      leading: Icon(
+                        Icons
+                            .settings_rounded, // miscellaneous_services_rounded,
+                        color: Theme.of(context).iconTheme.color,
+                      ),
+                      onTap: () {
+                        print("set");
+                      },
+                    ),
+                    ListTile(
+                      title: Text("about"),
+                      contentPadding:
+                          const EdgeInsets.symmetric(horizontal: 20.0),
+                      leading: Icon(
+                        Icons.info_outline_rounded,
+                        color: Theme.of(context).iconTheme.color,
+                      ),
+                      onTap: () {
+                        print("about");
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: <Widget>[
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 30, 5, 20),
+                      child: Center(
+                        child: Text(
+                          "made by",
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
         body: WillPopScope(
         onWillPop: () => handleWillPop(context),
         child: PageView(
