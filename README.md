@@ -1,16 +1,23 @@
-# symmetryk
+Symmetryk fait avec Flutter !
 
-A new Flutter project.
+## Captures d'Écran
 
-## Getting Started
+<img src="./screenshots/Screenshot_1.jpg" width="49%"> <img src="./screenshots/Screenshot_2.jpg" width="49%">
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Construire depuis la Source
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Si vous n'avez pas le SDK Flutter installé, merci de visiter le site officiel de [Flutter](https://flutter.dev/).
+2. Récupérez le code source de la branche master.
+
+```
+git clone https://github.com/chaima-sebai/symmetryk.git
+```
+
+3. Lancez l'application avec Android Studio ou VS Code. Ou dans la ligne de commandes:
+
+```
+flutter pub get
+flutter run
+```
