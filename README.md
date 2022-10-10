@@ -2,7 +2,7 @@ Symmetryk fait avec Flutter !
 
 ## Captures d'Écran
 
-<img src="./screenshots/Screenshot_1.jpg" width="49%"> <img src="./screenshots/Screenshot_2.jpg" width="49%">
+<img src="./screenshots/Screenshot_1.png" width="49%"> <img src="./screenshots/Screenshot_2.png" width="49%">
 
 
 
