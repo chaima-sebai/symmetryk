@@ -8,9 +8,6 @@ enum Environment {
 
 Environment env = Environment.development;
 
-
-
-
 String baseURL = (env == Environment.development)
     ? "192.168.1.100:5000" // or 10.0.2.2:3000
     : "larva-backend.herokuapp.com";
@@ -19,10 +16,8 @@ String baseUploadsURL = (env == Environment.development)
     ? "http://192.168.1.101:5000/uploads/"
     : "https://larva-backend.herokuapp.com/";
 
-
 DateFormat datetimeFormat = DateFormat("dd/MM/yyyy HH:mm");
 DateFormat dateFormat = DateFormat("dd/MM/yyyy");
-
 
 class Palette {
   static const Color iconColor = Color(0xffaabbcc);
@@ -34,11 +29,11 @@ class Palette {
     Color(0xfff9575a)
   ];
 
-    static const List<Color> quaternaryColors = [
+  static const List<Color> quaternaryColors = [
     Color(0xff475777),
     Color(0xff1b2c46)
   ];
-  
+
   static const Color backgroundColor = Color(0xff1a1c28);
 }
 
@@ -62,4 +57,12 @@ String capitalize(String msg) {
   return '${msg[0].toUpperCase()}${msg.substring(1)}';
 }
 
+enum Dimension { tablet, phone }
 
+Dimension getDimensions(BuildContext context) {
+  Size size = MediaQuery.of(context).size;
+  if (size.width > size.height) {
+    return Dimension.tablet;
+  }
+  return Dimension.phone;
+}

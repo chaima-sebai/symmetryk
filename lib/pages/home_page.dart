@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:symmetryk/components/snackbar.dart';
+import 'package:symmetryk/pages/brief_cases.dart';
 import 'package:symmetryk/statics.dart';
 
 class HomePage extends StatefulWidget {
@@ -92,9 +93,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                    ),
-                  
-                  
+                    ),                 
                     ListTile(
                       title: Text("downs"),
                       contentPadding:
@@ -174,7 +173,7 @@ class _HomePageState extends State<HomePage> {
           },
           controller: _pageController,
           children: [
-            Container(color: Colors.white),
+            Briefcases(),
             Container(color: Colors.blue),
             Container(color: Colors.yellow),
             Container(color: Colors.green),
@@ -202,19 +201,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SalomonBottomBarItem(
                     icon: const Icon(CupertinoIcons.chart_bar_alt_fill),
-                    title: const Text("Charts"),
+                    title: const Text("Calls"),
                     selectedColor: Palette.secondaryColor,
                     unselectedColor: Colors.white
                   ),
                   SalomonBottomBarItem(
-                    icon: const Icon(CupertinoIcons.money_dollar),
-                    title: const Text("Crypto"),
+                    icon: const Icon(CupertinoIcons.bookmark_fill),
+                    title: const Text("Favoris"),
                     selectedColor: Palette.secondaryColor,
                     unselectedColor: Colors.white
                   ),
                   SalomonBottomBarItem(
                     icon: const Icon(CupertinoIcons.settings),
-                    title: const Text("Settings"),
+                    title: const Text("Profil"),
                      selectedColor: Palette.secondaryColor,
                     unselectedColor: Colors.white
                   ),
